@@ -1,5 +1,5 @@
 {
-  "name": "tychos-node",
+  "name": "tychos",
   "version": "0.0.2",
   "description": "Node.js package for Tychos API",
   "main": "dist/index.js",
@@ -19,7 +19,7 @@
     "embeddings"
   ],
   "author": "abe732",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/tycho-lab/tychos-node/issues"
   },
