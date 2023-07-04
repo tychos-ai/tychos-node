@@ -1,0 +1,28 @@
+{
+  "name": "tychos-node",
+  "version": "1.0.0",
+  "description": "Node.js package for Tychos API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tycho-lab/tychos-node.git"
+  },
+  "keywords": [
+    "pubmed",
+    "vector",
+    "database",
+    "embeddings"
+  ],
+  "author": "abe732",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tycho-lab/tychos-node/issues"
+  },
+  "homepage": "https://github.com/tycho-lab/tychos-node#readme",
+  "dependencies": {
+    "axios": "^1.4.0"
+  }
+}
