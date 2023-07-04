@@ -1,10 +1,12 @@
 {
   "name": "tychos-node",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "Node.js package for Tychos API",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dist/index.js",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -17,12 +19,15 @@
     "embeddings"
   ],
   "author": "abe732",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/tycho-lab/tychos-node/issues"
   },
   "homepage": "https://github.com/tycho-lab/tychos-node#readme",
   "dependencies": {
     "axios": "^1.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6"
   }
 }
