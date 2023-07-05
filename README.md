@@ -39,7 +39,7 @@ const tychos = new VectorDataStore(apiKey);
 const datasets = tychos.list()
 
 // get name of the first dataset's id
-console.log(datasets.data[0]["name"])
+console.log(datasets.data[0].name)
 
 // query the data store object
 const queryResults = tychos.query({
