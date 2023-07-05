@@ -13,13 +13,12 @@ class VectorDataStore {
     this.vector = new Vector(apiKey);
   }
 
-  async query(name: string, queryString: string, limit: number): Promise<any> {
-    // Vectorize query string
-    const queryVector = await this.vector.create(
-      "text_embedding",
-      queryString,
-      "text-embedding-ada-002"
-    );
+  async query({ name, queryString, limit }: { name: string; queryString: string; limit: number; }): Promise<any> {    // Vectorize query string
+    const queryVector = await this.vector.create({
+      type: "text_embedding",
+      inputText: queryString,
+      model: "text-embedding-ada-002"
+    });
 
     // Send query request to vector data store
     const url = `${this.baseUrl}/query-vector-store`;
