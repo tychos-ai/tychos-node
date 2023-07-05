@@ -38,6 +38,18 @@ class VectorDataStore {
       return null;
     }
   }
+  
+  async list(): Promise<any> {
+    const url = `${this.baseUrl}/datasets`;
+    const headers = { 'api_key': this.apiKey };
+    try {
+      const response: AxiosResponse = await axios.get(url, { headers: headers });
+      return response.data;
+    } catch (e) {
+      console.error(e);
+      return null;
+    }
+  }
 }
 
 export default VectorDataStore;
