@@ -10,8 +10,7 @@ class Vector {
     // this.baseUrl = 'http://localhost:3000/api/';
   }
 
-  async create(type: string, inputText: string, model: string, modelProviderKey?: string): Promise<any> {
-    if (type === 'text_embedding') {
+  async create({ type, inputText, model, modelProviderKey }: { type: string; inputText: string; model: string; modelProviderKey?: string; }): Promise<any> {    if (type === 'text_embedding') {
       if (model === 'text-embedding-ada-002') {
         try {
           const url = `${this.baseUrl}/create-vector`;
