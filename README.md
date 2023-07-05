@@ -35,6 +35,12 @@ Query live vector datasets:
 // initialize data store with API key
 const tychos = new VectorDataStore(apiKey);
 
+// list available datasets
+const datasets = tychos.list()
+
+// get name of the first dataset's id
+console.log(datasets.data[0]["name"])
+
 // query the data store object
 const queryResults = tychos.query({
     name: "pub-med-abstracts",
