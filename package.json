@@ -1,7 +1,8 @@
 {
   "name": "tychos",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Node.js package for Tychos API",
+  "readme": "README.md",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
