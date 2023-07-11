@@ -21,10 +21,13 @@ class VectorDataStore {
         // this.baseUrl = 'http://localhost:3000/api/';
         this.vector = new Vector_1.default(apiKey);
     }
-    query(name, queryString, limit) {
+    query({ name, queryString, limit }) {
         return __awaiter(this, void 0, void 0, function* () {
-            // Vectorize query string
-            const queryVector = yield this.vector.create("text_embedding", queryString, "text-embedding-ada-002");
+            const queryVector = yield this.vector.create({
+                type: "text_embedding",
+                inputText: queryString,
+                model: "text-embedding-ada-002"
+            });
             // Send query request to vector data store
             const url = `${this.baseUrl}/query-vector-store`;
             const headers = { 'api_key': this.apiKey };
@@ -35,6 +38,20 @@ class VectorDataStore {
             };
             try {
                 const response = yield axios_1.default.post(url, payload, { headers: headers });
+                return response.data;
+            }
+            catch (e) {
+                console.error(e);
+                return null;
+            }
+        });
+    }
+    list() {
+        return __awaiter(this, void 0, void 0, function* () {
+            const url = `${this.baseUrl}/datasets`;
+            const headers = { 'api_key': this.apiKey };
+            try {
+                const response = yield axios_1.default.get(url, { headers: headers });
                 return response.data;
             }
             catch (e) {

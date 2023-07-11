@@ -19,12 +19,12 @@ class Vector {
         this.baseUrl = 'https://www.tychos.ai/api/';
         // this.baseUrl = 'http://localhost:3000/api/';
     }
-    create(type, inputText, model, modelProviderKey) {
+    create({ type, inputText, model, modelProviderKey }) {
         return __awaiter(this, void 0, void 0, function* () {
             if (type === 'text_embedding') {
                 if (model === 'text-embedding-ada-002') {
                     try {
-                        const url = `${this.baseUrl}/create-vector`;
+                        const url = `${this.baseUrl}create-vector`;
                         const headers = { 'api_key': this.apiKey };
                         const payload = {
                             'model_provider_key': modelProviderKey,
