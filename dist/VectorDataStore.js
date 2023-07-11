@@ -29,7 +29,7 @@ class VectorDataStore {
                 model: "text-embedding-ada-002"
             });
             // Send query request to vector data store
-            const url = `${this.baseUrl}/query-vector-store`;
+            const url = `${this.baseUrl}query-vector-store`;
             const headers = { 'api_key': this.apiKey };
             const payload = {
                 'name': name,
