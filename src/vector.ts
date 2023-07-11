@@ -13,7 +13,7 @@ class Vector {
   async create({ type, inputText, model, modelProviderKey }: { type: string; inputText: string; model: string; modelProviderKey?: string; }): Promise<any> {    if (type === 'text_embedding') {
       if (model === 'text-embedding-ada-002') {
         try {
-          const url = `${this.baseUrl}/create-vector`;
+          const url = `${this.baseUrl}create-vector`;
           const headers = { 'api_key': this.apiKey };
           const payload = {
             'model_provider_key': modelProviderKey,

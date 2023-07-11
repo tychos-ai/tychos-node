@@ -1,6 +1,6 @@
 {
   "name": "tychos",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Node.js package for Tychos API",
   "readme": "README.md",
   "main": "dist/index.js",
