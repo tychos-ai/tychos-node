@@ -13,13 +13,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
-const Vector_1 = __importDefault(require("./Vector"));
+const vector_1 = __importDefault(require("./vector"));
 class VectorDataStore {
     constructor(apiKey) {
         this.apiKey = apiKey;
         this.baseUrl = 'https://www.tychos.ai/api/';
         // this.baseUrl = 'http://localhost:3000/api/';
-        this.vector = new Vector_1.default(apiKey);
+        this.vector = new vector_1.default(apiKey);
     }
     query({ name, queryString, limit }) {
         return __awaiter(this, void 0, void 0, function* () {
