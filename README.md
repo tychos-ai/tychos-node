@@ -3,7 +3,7 @@
 The Tychos Node.js library provides convenient access to the Tychos API from
 applications written in JavaScript and TypeScript. The Tychos API allows you to query live, hosted vector datasets in your LLM application without needing to manage your own vector database / embedding pipelines.
 
-You can find usage examples for the Tychos Node.js library in our [BioMed Demo App](https://demo.tychos.ai/) and the [/demo repo folder](https://github.com/tychos-ai/tychos).
+To see the Tychos API in action, you can test out our [PubMed Demo App](https://tychos.ai/demo).
 
 *Note: this library is meant for server-side usage only*
 
