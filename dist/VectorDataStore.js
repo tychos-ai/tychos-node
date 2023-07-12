@@ -48,7 +48,7 @@ class VectorDataStore {
     }
     list() {
         return __awaiter(this, void 0, void 0, function* () {
-            const url = `${this.baseUrl}/datasets`;
+            const url = `${this.baseUrl}datasets`;
             const headers = { 'api_key': this.apiKey };
             try {
                 const response = yield axios_1.default.get(url, { headers: headers });
