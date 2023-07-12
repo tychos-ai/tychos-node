@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from 'axios';
-import Vector from './Vector';
+import Vector from './vector';
 
 class VectorDataStore {
   private apiKey: string;
