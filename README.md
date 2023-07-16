@@ -36,13 +36,13 @@ Query live vector datasets:
 const tychos = new VectorDataStore(apiKey);
 
 // list available datasets
-const datasets = tychos.list()
+const datasets = await tychos.list()
 
 // get name of the first dataset
 console.log(datasets.data[0].name)
 
 // query the data store object
-const queryResults = tychos.query({
+const queryResults = await tychos.query({
     name: "pub-med-abstracts",
     queryString: "What is the latest research on molecular peptides",
     limit: 5
