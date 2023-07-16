@@ -8,7 +8,7 @@ class VectorDataStore {
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
-    this.baseUrl = 'https://www.tychos.ai/api/';
+    this.baseUrl = 'https://api.tychos.ai/api/';
     // this.baseUrl = 'http://localhost:3000/api/';
     this.vector = new Vector(apiKey);
   }
