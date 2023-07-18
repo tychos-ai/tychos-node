@@ -35,12 +35,6 @@ Query live vector datasets:
 // initialize data store with API key
 const tychos = new VectorDataStore(apiKey);
 
-// list available datasets
-const datasets = await tychos.list()
-
-// get name of the first dataset
-console.log(datasets.data[0].name)
-
 // query the data store object
 const queryResults = await tychos.query({
     name: "pub-med-abstracts",
@@ -54,11 +48,11 @@ console.log(queryResults[0].payload);
 
 ## Datasets available
 
-We currently support a handful of research datasets. If there's a particular dataset you'd like to incorporate into your LLM application, feel free to [reach out][twitter].
+We currently support the PubMed dataset and have plans to add additional sources in the coming weeks. If there's a particular dataset you'd like to incorporate into your LLM application, feel free to [reach out][twitter].
 
 ### Vector datasets
 
-- PubMed abstracts ([source][pub-med]): 33.2M documents, updated daily at 07:00 UTC.
+- PubMed abstracts ([source][pub-med]): 33.8M documents, updated daily at 07:00 UTC.
 
 ## Feedback and support
 
