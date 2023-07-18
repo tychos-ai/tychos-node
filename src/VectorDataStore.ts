@@ -17,7 +17,7 @@ class VectorDataStore {
     const queryVector = await this.vector.create({
       type: "text_embedding",
       inputText: queryString,
-      model: "text-embedding-ada-002"
+      model: "text-embedding-ada-002",
     });
 
     // Send query request to vector data store
