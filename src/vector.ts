@@ -6,14 +6,13 @@ class Vector {
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
-    this.baseUrl = 'https://api.tychos.ai/api/';
-    // this.baseUrl = 'http://localhost:3000/api/';
+    this.baseUrl = 'https://api.tychos.ai/v1/';
   }
 
   async create({ type, inputText, model, modelProviderKey }: { type: string; inputText: string; model: string; modelProviderKey?: string; }): Promise<any> {    if (type === 'text_embedding') {
       if (model === 'text-embedding-ada-002') {
         try {
-          const url = `${this.baseUrl}create-vector`;
+          const url = `${this.baseUrl}vector/create`;
           const headers = { 'api_key': this.apiKey };
           const payload = {
             'model_provider_key': modelProviderKey,
