@@ -35,9 +35,16 @@ Query live vector datasets:
 // initialize data store with API key
 const tychos = new VectorDataStore(apiKey);
 
-// query the data store object
+// query a single dataset from the data store object
 const queryResults = await tychos.query({
     name: "pub-med-abstracts",
+    queryString: "What is the latest research on molecular peptides",
+    limit: 5
+})
+
+// query multiple datasets and return the global top results
+const queryResults = await tychos.query({
+    name: ["arxiv-abstracts", "pub-med-abstracts"],
     queryString: "What is the latest research on molecular peptides",
     limit: 5
 })
@@ -47,12 +54,13 @@ console.log(queryResults[0].payload);
 ```
 
 ## Datasets available
-
-We currently support the PubMed dataset and have plans to add additional sources in the coming weeks. If there's a particular dataset you'd like to incorporate into your LLM application, feel free to [reach out][twitter].
+We currently support the full PubMed and ArXiv datasets and have plans to add additional sources in the coming weeks. If there's a particular dataset you'd like to incorporate into your LLM application, feel free to [reach out][twitter] or raise a GitHub issue.
 
 ### Vector datasets
-
-- PubMed abstracts ([source][pub-med]): 35.5M documents, updated daily at 07:00 UTC.
+| Dataset | Name | Size | Update Cadence | Update Time |
+| --------------- | --------------- | --------------- | --------------- | --------------- |
+| PubMed Abstracts ([source][pub-med]) | pub-med-abstracts | 35.5M documents | Daily | 07:00 UTC |
+| Arxiv Abstracts ([source][arxiv]) | arxiv-abstracts | 2.3M documents | Weekly | 07:00 UTC on Sunday|
 
 ## Feedback and support
 
@@ -61,3 +69,4 @@ If you'd like to provide feedback, run into issues, or need support using embedd
 [api-keys]: https://tychos.ai/
 [twitter]: https://twitter.com/etpuisfume
 [pub-med]: https://pubmed.ncbi.nlm.nih.gov/download/
+[arxiv]: https://info.arxiv.org/help/bulk_data/index.html
