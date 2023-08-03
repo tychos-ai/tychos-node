@@ -52,7 +52,7 @@ We currently support the PubMed dataset and have plans to add additional sources
 
 ### Vector datasets
 
-- PubMed abstracts ([source][pub-med]): 33.8M documents, updated daily at 07:00 UTC.
+- PubMed abstracts ([source][pub-med]): 35.5M documents, updated daily at 07:00 UTC.
 
 ## Feedback and support
 
