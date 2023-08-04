@@ -33,7 +33,13 @@ Query live vector datasets:
 
 ```javascript
 // initialize data store with API key
-const tychos = new VectorDataStore(apiKey);
+const tychos = new VectorDataStore(apiKey)
+
+// list available datasets
+const datasets = tychos.list()
+
+// get name of the first dataset's id
+console.log(datasets.data[0].name)
 
 // query a single dataset from the data store object
 const queryResults = await tychos.query({
