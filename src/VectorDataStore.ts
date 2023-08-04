@@ -8,7 +8,7 @@ class VectorDataStore {
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
-    this.baseUrl = 'https://api.tychos.ai/v1/';
+    this.baseUrl = 'https://api.tychos.ai/';
     this.vector = new Vector(apiKey);
   }
 
@@ -35,7 +35,7 @@ class VectorDataStore {
     }
 
     // Send query request to vector data store
-    const url = `${this.baseUrl}vector_data_store/query`;
+    const url = `${this.baseUrl}v1/vector_data_store/query`;
     const headers = { 'api_key': this.apiKey };
     const payload = {
       'name': name,
@@ -54,7 +54,7 @@ class VectorDataStore {
   }
   
   async list(): Promise<any> {
-    const url = `${this.baseUrl}vector_data_store/list`;
+    const url = `${this.baseUrl}v1/vector_data_store/list`;
     const headers = { 'api_key': this.apiKey };
     try {
       const response: AxiosResponse = await axios.get(url, { headers: headers });
