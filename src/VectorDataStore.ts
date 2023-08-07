@@ -1,5 +1,13 @@
 import axios, { AxiosResponse } from 'axios';
 import Vector from './vector';
+import { validateQueryFilter } from './helpers/validationChecks';
+
+type PayloadType = {
+  name: string | string[],
+  query_vector: any,
+  top: number,
+  query_filter?: any,
+};
 
 class VectorDataStore {
   private apiKey: string;
@@ -12,7 +20,12 @@ class VectorDataStore {
     this.vector = new Vector(apiKey);
   }
 
-  async query({ name, queryString, limit }: { name: string | string[]; queryString: string; limit: number; }): Promise<any> {
+  async query({ name, queryString, limit, queryFilter }: {
+    name: string | string[];
+    queryString: string;
+    limit: number;
+    queryFilter?: any;
+  }): Promise<any> {
     if (this.apiKey === undefined) {
       throw new Error("API key not set. Please set the API key using 'tychos.apiKey = <your_api_key>'. If you need to create an API key, you can do so at tychos.ai")
     }
@@ -37,10 +50,14 @@ class VectorDataStore {
     // Send query request to vector data store
     const url = `${this.baseUrl}v1/vector_data_store/query`;
     const headers = { 'api_key': this.apiKey };
-    const payload = {
+    let payload: PayloadType = {
       'name': name,
       'query_vector': queryVector,
       'top': limit,
+    };
+    if (queryFilter !== undefined) {
+      validateQueryFilter(queryFilter);
+      payload['query_filter'] = queryFilter;
     };
 
     try {
