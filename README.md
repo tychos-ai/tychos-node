@@ -29,7 +29,7 @@ const { VectorDataStore } = require('tychos');
 const apiKey = "sk_test_12345";
 ```
 
-Query live vector datasets:
+### Query live vector datasets
 
 ```javascript
 // initialize data store with API key
@@ -58,6 +58,42 @@ const queryResults = await tychos.query({
 // print the metadata associated with the first result
 console.log(queryResults[0].payload);
 ```
+
+### Filter queries on metadata fields
+You can filter queries of individual datasets by passing a queryFilter object that specifies the field, operator and condition to apply. The following operators are available:
+
+| Operator | Description |
+| --- | --- |
+| $eq | Equal to. Checks if the field value is equal to the specified value.|
+| $ne | Not equal to. Checks if the field value is not equal to the specified value.|
+| $gt | Greater than. Checks if the field value is greater than the specified value.|
+| $gte | Greater than or equal to. Checks if the field value is greater than or equal to the specified value.|
+| $lt | Less than. Checks if the field value is less than the specified value.|
+| $lte | Less than or equal to. Checks if the field value is less than or equal to the specified value.|
+| $in | In array. Checks if the field value is within the specified array.|
+| $nin | Not in array. Checks if the field value is not within the specified array.|
+
+Example queries using filters
+```javascript
+// filter query on PubMed articles with a publication date after 1989
+const queryResults = await tychos.query({
+    name: "pub-med-abstracts",
+    queryString: "What is the latest research on molecular peptides",
+    queryFilter: {"Publication Date": {"$gt":"1989-12-31"}}
+    limit: 5
+})
+
+// filter query on ArXiv papers written by LeCun, Hinton and Bengio
+const queryResults = await tychos.query({
+    name: "arxiv-abstracts",
+    queryString: "What is the latest research on molecular peptides",
+    queryFilter: {"authors": {"$in":["LeCun", "Hinton", "Bengio"]}}
+    limit: 5
+})
+
+```
+
+See the datasets table below for the metadata fields available on each. As we expand datasets, we plan to make available a set of general filters (e.g., date, author, type) for queries across multiple datasets.
 
 ## Datasets available
 We currently support the full PubMed and ArXiv datasets and have plans to add additional sources in the coming weeks. If there's a particular dataset you'd like to incorporate into your LLM application, feel free to [reach out][twitter] or raise a GitHub issue.
