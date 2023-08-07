@@ -73,9 +73,9 @@ You can filter queries of individual datasets by passing a queryFilter object th
 | $in | In array. Checks if the field value is within the specified array.|
 | $nin | Not in array. Checks if the field value is not within the specified array.|
 
-Example queries using filters
+Example queries using filters:
 ```javascript
-// filter query on PubMed articles with a publication date after 1989
+// filter PubMed query on articles with a publication date after 1989
 const queryResults = await tychos.query({
     name: "pub-med-abstracts",
     queryString: "What is the latest research on molecular peptides",
@@ -83,7 +83,7 @@ const queryResults = await tychos.query({
     limit: 5
 })
 
-// filter query on ArXiv papers written by LeCun, Hinton and Bengio
+// filter ArXiv query on papers written by LeCun, Hinton and Bengio
 const queryResults = await tychos.query({
     name: "arxiv-abstracts",
     queryString: "What is the latest research on molecular peptides",
