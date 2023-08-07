@@ -33,7 +33,7 @@ const apiKey = "sk_test_12345";
 
 ```javascript
 // initialize data store with API key
-const tychos = new VectorDataStore(apiKey)
+const dataStore = new VectorDataStore(apiKey)
 
 // list available datasets
 const datasets = tychos.list()
@@ -42,14 +42,14 @@ const datasets = tychos.list()
 console.log(datasets.data[0].name)
 
 // query a single dataset from the data store object
-const queryResults = await tychos.query({
+const queryResults = await dataStore.query({
     name: "pub-med-abstracts",
     queryString: "What is the latest research on molecular peptides",
     limit: 5
 })
 
 // query multiple datasets and return the global top results
-const queryResults = await tychos.query({
+const queryResults = await dataStore.query({
     name: ["arxiv-abstracts", "pub-med-abstracts"],
     queryString: "What is the latest research on molecular peptides",
     limit: 5
@@ -76,7 +76,7 @@ You can filter queries of individual datasets by passing a queryFilter object th
 Example queries using filters:
 ```javascript
 // filter PubMed query on articles with a publication date after 1989
-const queryResults = await tychos.query({
+const queryResults = await dataStore.query({
     name: "pub-med-abstracts",
     queryString: "What is the latest research on molecular peptides",
     queryFilter: {"Publication Date": {"$gt":"1989-12-31"}}
@@ -84,7 +84,7 @@ const queryResults = await tychos.query({
 })
 
 // filter ArXiv query on papers written by LeCun, Hinton and Bengio
-const queryResults = await tychos.query({
+const queryResults = await dataStore.query({
     name: "arxiv-abstracts",
     queryString: "What is the latest research on molecular peptides",
     queryFilter: {"authors": {"$in":["LeCun", "Hinton", "Bengio"]}}
