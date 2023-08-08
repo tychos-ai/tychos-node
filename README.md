@@ -63,7 +63,7 @@ console.log(queryResults[0].payload);
 You can filter queries of individual datasets by passing a queryFilter object that specifies the field, operator and condition to apply. The following operators are available:
 
 | Operator | Description |
-| --- | --- |
+| :--- | :--- |
 | $eq | Equal to. Checks if the field value is equal to the specified value.|
 | $ne | Not equal to. Checks if the field value is not equal to the specified value.|
 | $gt | Greater than. Checks if the field value is greater than the specified value.|
