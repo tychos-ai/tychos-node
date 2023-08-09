@@ -38,7 +38,7 @@ export function validateQueryFilter(queryFilter: any): boolean {
                 throw new Error(`The operand of '${operator}' must be a number or date string.`);
             }
         } else if (['$in', '$nin'].includes(operator)) {
-            if (!Array.isArray(operand) || !operand.every(i => typeof i === 'number' || (typeof i === 'string' && date_pattern.test(i)))) {
+            if (!Array.isArray(operand) || !operand.every(i => typeof i === 'number' || (typeof i === 'string'))) {
                 throw new Error(`The operand of '${operator}' must be a list of numbers or date strings in ISO 8601 format.`);
             }
         }
