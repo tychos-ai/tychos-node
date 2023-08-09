@@ -75,7 +75,7 @@ Example queries using filters:
 const queryResults = await dataStore.query({
     name: "pub-med-abstracts",
     queryString: "What is the latest research on molecular peptides",
-    queryFilter: {"Journal": {"$gt":"New England Journal of Medicine"}}
+    queryFilter: {"Journal": {"$eq":"New England Journal of Medicine"}}
     limit: 5
 })
 
