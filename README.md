@@ -92,7 +92,7 @@ const queryResults = await dataStore.query({
 See the datasets table below for the metadata fields available on each. We are working on adding additional query operators and fields (e.g., date ranges). As we expand datasets, we also plan to make available a set of general filters (e.g., date, author, type) for queries across multiple datasets.
 
 ## Datasets available
-We currently support the full PubMed and ArXiv datasets and have plans to add additional sources in the coming weeks. If there's a particular dataset you'd like to incorporate into your LLM application, feel free to [reach out][twitter] or raise a GitHub issue.
+We currently support the full PubMed, US Patent, and ArXiv datasets and have plans to add additional sources in the coming weeks. If there's a particular dataset you'd like to incorporate into your LLM application, feel free to [reach out][twitter] or raise a GitHub issue.
 
 ### Vector datasets
 | Dataset | Name | Size | Syncs | Metadata Fields |

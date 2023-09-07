@@ -38,7 +38,7 @@ class VectorDataStore {
     });
 
     // validate index name
-    const availableIndices = ['pub-med-abstracts', 'arxiv-abstracts'];
+    const availableIndices = ['pub-med-abstracts', 'arxiv-abstracts', 'us-patents'];
     if (!Array.isArray(name)) {
         name = [name];
     }
